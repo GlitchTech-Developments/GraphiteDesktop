@@ -1,10 +1,10 @@
 [package]
 name = "graphite_desktop"
 version = "0.0.1"
-description = "A Tauri App"
-authors = ["you"]
+description = "A simple desktop app for Graphite"
+authors = ["GlitchTech Developments"]
 license = "MIT"
-repository = ""
+repository = "https://github.com/GlitchTech-Developments/GraphiteDesktop"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
