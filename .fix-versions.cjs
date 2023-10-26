@@ -16,7 +16,7 @@ const versionHandler = async () => {
         JSON.stringify(newPackageJson, null, 2),
       );
     } catch (error) {
-      console.error(error);
+      throw error;
     }
   };
 
@@ -31,7 +31,7 @@ const versionHandler = async () => {
 
       const cargoPackageVersion = cargo.match(/version = "(.*)"/)[1];
 
-      console.log("versions mismatched:", {
+      console.log("versions:", {
         cargo: cargoPackageVersion,
         package: actualVersion,
       });
@@ -40,7 +40,11 @@ const versionHandler = async () => {
         /version = "(.*)"/,
         `version = "${actualVersion}"`,
       );
+
       await fs.promises.writeFile("./src-tauri/Cargo.toml", newCargoConfig);
+
+      if (cargoPackageVersion !== actualVersion)
+        throw new Error("Version mismatch");
     } catch (error) {
       console.error(error);
     }
@@ -52,9 +56,12 @@ const versionHandler = async () => {
         "./src-tauri/tauri.conf.json",
         "utf-8",
       );
+
+      if (!tauri) throw new Error("tauri.conf.json not found");
+
       const tauriPackageVersion = tauri.match(/"version": "(.*)"/)[1];
 
-      console.log("versions mismatched:", {
+      console.log("versions:", {
         tauri: tauriPackageVersion,
         package: actualVersion,
       });
@@ -63,10 +70,14 @@ const versionHandler = async () => {
         /"version": "(.*)"/,
         `"version": "${actualVersion}"`,
       );
+
       await fs.promises.writeFile(
         "./src-tauri/tauri.conf.json",
         newTauriConfig,
       );
+
+      if (tauriPackageVersion !== actualVersion)
+        throw new Error("Version mismatch");
     } catch (error) {
       console.error(error);
     }
