@@ -1,6 +1,6 @@
 [package]
 name = "graphite_desktop"
-version = "0.0.1-7afb043"
+version = "0.0.1"
 description = "A simple desktop app for Graphite"
 authors = ["GlitchTech Developments"]
 license = "MIT"

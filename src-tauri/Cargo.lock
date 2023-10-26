@@ -1050,7 +1050,7 @@ dependencies = [
 
 [[package]]
 name = "graphite_desktop"
-version = "0.0.1-7afb043"
+version = "0.0.1"
 dependencies = [
  "serde",
  "serde_json",
