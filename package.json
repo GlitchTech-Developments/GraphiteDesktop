@@ -12,10 +12,12 @@
     "preview:native-win": "./.exec/exec-bundle-unix.sh",
     "tauri": "tauri",
     "prettier": "prettier --write ./src/**/*.{ts,tsx,css}",
-    "fix:version-mismatch": "node ./.fix-versions.cjs"
+    "fix:version-mismatch": "node ./.fix-versions.cjs",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.5.1",
+    "husky": "^8.0.3",
     "preact": "^10.18.1"
   },
   "devDependencies": {
