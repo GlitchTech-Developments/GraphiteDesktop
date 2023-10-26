@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "preview:native-unix": "./.exec/exec-bundle-unix.sh",
     "preview:native-win": "./.exec/exec-bundle-unix.sh",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "prettier": "prettier --write ./src/**/*.{ts,tsx,css}"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.5.1",
