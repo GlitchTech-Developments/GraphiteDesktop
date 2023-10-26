@@ -11,8 +11,7 @@
     "preview:native-unix": "./.exec/exec-bundle-unix.sh",
     "preview:native-win": "./.exec/exec-bundle-unix.sh",
     "tauri": "tauri",
-    "prettier": "prettier --write ./src/**/*.{ts,tsx,css}",
-    "semantic-release": "semantic-release"
+    "prettier": "prettier --write ./src/**/*.{ts,tsx,css}"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.5.1",
@@ -32,7 +31,6 @@
     "postcss-preset-env": "^9.2.0",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
-    "semantic-release": "^22.0.5",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "^3.3.5",
     "typescript": "^5.2.2",
