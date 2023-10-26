@@ -4,7 +4,7 @@ import { useEffect, useState } from "preact/hooks";
 import { checkWebsiteAvailability } from "@/utils/isEndpointUp";
 import { isNative } from "@/utils/isNativeRuntime";
 
-const debug = true;
+const debug = false;
 
 const SplashScreenProvider = ({ children }: { children: VNode<any> }) => {
   const [splashScreenClosed, setSplashScreenClosed] = useState(false);
