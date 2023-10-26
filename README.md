@@ -24,9 +24,19 @@ pnpm run dev:native
 
 ## Run executable locally
 
+> After these commands you'll find the installer in `/src-tauri/target/release/bundle` depending on your platform. Automated releases towards github will be coming in the near future as well though.
+
 ```sh
 pnpm tauri build && pnpm run preview:native-[win/linux]
 ```
+
+## What to expect?
+
+When opening the app, you'll first be welcomed with the following screen where the app checks if Graphite is up and reachable:
+![image](https://github.com/GlitchTech-Developments/GraphiteDesktop/assets/60965908/4bd9943a-5fb9-4ee8-9a05-bf1679c2e070)
+
+On windows you'll get (after logging in) the following screen (could change upstream at some point):
+![image](https://github.com/GlitchTech-Developments/GraphiteDesktop/assets/60965908/60d266c0-9af4-4500-bea3-52f2bb564d1b)
 
 ## Author
 
