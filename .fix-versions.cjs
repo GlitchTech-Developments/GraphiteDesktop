@@ -1,8 +1,25 @@
 const fs = require("node:fs");
 const packageJson = require("./package.json");
+const cp = require("child_process");
 
 const versionHandler = async () => {
   const { version: actualVersion } = packageJson;
+  const revision = cp.execSync("git rev-parse --short HEAD").toString().trim();
+
+  const updatePackageJsonVersion = async () => {
+    try {
+      const newPackageJson = {
+        ...packageJson,
+        version: `${actualVersion}-${revision}`,
+      };
+      await fs.promises.writeFile(
+        "./package.json",
+        JSON.stringify(newPackageJson, null, 2),
+      );
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const swapCargoPackageVersion = async () => {
     try {
@@ -15,14 +32,6 @@ const versionHandler = async () => {
 
       const cargoPackageVersion = cargo.match(/version = "(.*)"/)[1];
 
-      if (cargoPackageVersion === actualVersion) {
-        console.log("versions matched on cargo package", {
-          cargo: cargoPackageVersion,
-          package: actualVersion,
-        });
-        return;
-      }
-
       console.log("versions mismatched:", {
         cargo: cargoPackageVersion,
         package: actualVersion,
@@ -30,7 +39,7 @@ const versionHandler = async () => {
 
       const newCargoConfig = cargo.replace(
         /version = "(.*)"/,
-        `version = "${actualVersion}"`,
+        `version = "${actualVersion}-${revision}"`,
       );
       await fs.promises.writeFile("./src-tauri/Cargo.toml", newCargoConfig);
     } catch (error) {
@@ -46,15 +55,6 @@ const versionHandler = async () => {
       );
       const tauriPackageVersion = tauri.match(/"version": "(.*)"/)[1];
 
-      if (tauriPackageVersion === actualVersion) {
-        console.log("versions matched on tauri package", {
-          tauri: tauriPackageVersion,
-          package: actualVersion,
-        });
-
-        return;
-      }
-
       console.log("versions mismatched:", {
         tauri: tauriPackageVersion,
         package: actualVersion,
@@ -62,7 +62,7 @@ const versionHandler = async () => {
 
       const newTauriConfig = tauri.replace(
         /"version": "(.*)"/,
-        `"version": "${actualVersion}"`,
+        `"version": "${actualVersion}-${revision}"`,
       );
       await fs.promises.writeFile(
         "./src-tauri/tauri.conf.json",
@@ -74,6 +74,7 @@ const versionHandler = async () => {
   };
 
   await Promise.allSettled([
+    updatePackageJsonVersion(),
     swapCargoPackageVersion(),
     swapTauriPackageVersion(),
   ]);
