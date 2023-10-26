@@ -11,7 +11,8 @@
     "preview:native-unix": "./.exec/exec-bundle-unix.sh",
     "preview:native-win": "./.exec/exec-bundle-unix.sh",
     "tauri": "tauri",
-    "prettier": "prettier --write ./src/**/*.{ts,tsx,css}"
+    "prettier": "prettier --write ./src/**/*.{ts,tsx,css}",
+    "fix:version-mismatch": "node ./.fix-versions.cjs"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.5.1",
@@ -23,6 +24,7 @@
     "@tailwindcss/container-queries": "^0.1.1",
     "@tauri-apps/cli": "^1.5.6",
     "@trivago/prettier-plugin-sort-imports": "^4.2.1",
+    "@types/node": "^20.8.9",
     "clsx": "^2.0.0",
     "cssnano": "^6.0.1",
     "postcss": "^8.4.31",
@@ -45,5 +47,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/GlitchTech-Developments/GraphiteDesktop.git"
+  },
+  "volta": {
+    "node": "20.9.0"
   }
 }

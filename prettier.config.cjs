@@ -1,5 +1,6 @@
 /** @type {import("prettier").Config} */
 const config = {
+  importAttributes: true,
   plugins: [
     require.resolve("@trivago/prettier-plugin-sort-imports"),
     require.resolve("prettier-plugin-tailwindcss"),
