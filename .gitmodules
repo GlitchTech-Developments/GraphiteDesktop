@@ -1,0 +1,4 @@
+[submodule ".pub-keys"]
+	path = .pub-keys
+	url = https://github.com/GlitchTech-Developments/GraphiteDesktopKeys/tree/main
+	branch = main
