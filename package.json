@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@tauri-apps/api": "^1.5.1",
-    "node-fetch": "^3.3.2",
     "preact": "^10.18.1"
   },
   "devDependencies": {
