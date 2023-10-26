@@ -1,7 +1,7 @@
 {
   "name": "graphite-desktop-oss",
   "private": true,
-  "version": "0.0.1-d767676-d767676",
+  "version": "0.0.1-7afb043",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -7,10 +7,11 @@ const versionHandler = async () => {
   const revision = cp.execSync("git rev-parse --short HEAD").toString().trim();
 
   const updatePackageJsonVersion = async () => {
+    const versionCode = actualVersion.split("-")[0];
     try {
       const newPackageJson = {
         ...packageJson,
-        version: `${actualVersion}-${revision}`,
+        version: `${versionCode}-${revision}`,
       };
       await fs.promises.writeFile(
         "./package.json",
@@ -39,7 +40,7 @@ const versionHandler = async () => {
 
       const newCargoConfig = cargo.replace(
         /version = "(.*)"/,
-        `version = "${actualVersion}-${revision}"`,
+        `version = "${actualVersion}"`,
       );
       await fs.promises.writeFile("./src-tauri/Cargo.toml", newCargoConfig);
     } catch (error) {
@@ -62,7 +63,7 @@ const versionHandler = async () => {
 
       const newTauriConfig = tauri.replace(
         /"version": "(.*)"/,
-        `"version": "${actualVersion}-${revision}"`,
+        `"version": "${actualVersion}"`,
       );
       await fs.promises.writeFile(
         "./src-tauri/tauri.conf.json",

@@ -35,19 +35,14 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: latest
-      - name: Declare some variables
-        id: commit_hash
-        shell: bash
-        run: |
-          echo $(git rev-parse --short HEAD)
       - name: install frontend dependencies
         run: pnpm install # change this to npm or pnpm depending on which one you use
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          tagName: GraphiteDesktop-v__VERSION__${{ steps.commit_hash.outputs }} # the action automatically replaces \_\_VERSION\_\_ with the app version
-          releaseName: "GraphiteDesktop v__VERSION__${{ steps.commit_hash.outputs }}"
+          tagName: GraphiteDesktop-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
+          releaseName: "GraphiteDesktop v__VERSION__"
           releaseBody: "See the assets to download this version and install."
           releaseDraft: true
           prerelease: false

@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "GraphiteDesktop",
-    "version": "0.0.1-d767676-d767676"
+    "version": "0.0.1-7afb043"
   },
   "tauri": {
     "allowlist": {
