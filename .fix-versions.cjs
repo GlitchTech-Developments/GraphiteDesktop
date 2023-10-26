@@ -1,17 +1,15 @@
 const fs = require("node:fs");
 const packageJson = require("./package.json");
-const cp = require("child_process");
 
 const versionHandler = async () => {
   const { version: actualVersion } = packageJson;
-  const revision = cp.execSync("git rev-parse --short HEAD").toString().trim();
 
   const updatePackageJsonVersion = async () => {
     const versionCode = actualVersion.split("-")[0];
     try {
       const newPackageJson = {
         ...packageJson,
-        version: `${versionCode}-${revision}`,
+        version: `${versionCode}`,
       };
       await fs.promises.writeFile(
         "./package.json",
