@@ -3,8 +3,6 @@ name: Build and Release Application
 on:
   push:
     branches: [nightly]
-  pull_request:
-    branches: [nightly]
   pull_request_target: # needed for forked PRs
     branches: [nightly]
 
