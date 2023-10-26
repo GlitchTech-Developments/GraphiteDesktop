@@ -1,0 +1,39 @@
+{
+  "name": "graphite-desktop-oss",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:native": "tauri dev",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "preview:native-unix": "./.exec/exec-bundle-unix.sh",
+    "preview:native-win": "./.exec/exec-bundle-unix.sh",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^1.5.1",
+    "node-fetch": "^3.3.2",
+    "preact": "^10.18.1"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.6.0",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tauri-apps/cli": "^1.5.6",
+    "@trivago/prettier-plugin-sort-imports": "^4.2.1",
+    "clsx": "^2.0.0",
+    "cssnano": "^6.0.1",
+    "postcss": "^8.4.31",
+    "postcss-import": "^15.1.0",
+    "postcss-nesting": "^12.0.1",
+    "postcss-preset-env": "^9.2.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.6",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0"
+  }
+}

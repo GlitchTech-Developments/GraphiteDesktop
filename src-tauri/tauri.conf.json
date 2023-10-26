@@ -1,0 +1,73 @@
+{
+  "build": {
+    "beforeDevCommand": "pnpm run dev",
+    "beforeBuildCommand": "pnpm run build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist",
+    "withGlobalTauri": false
+  },
+  "package": {
+    "productName": "GraphiteDesktop",
+    "version": "0.0.1"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "window": {
+        "create": true
+      },
+      "http": {
+        "request": true,
+        "scope": ["https://app.graphite.dev/*", "https://*.graphite.*/*"]
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": ["deb", "nsis", "msi", "app", "dmg", "updater"],
+      "identifier": "com.glitchtech.graphitedesktop",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    },
+    "security": {
+      "csp": "default-src * 'self' data: tauri://*, https://app.graphite.dev"
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "title": "Graphite Desktop",
+        "width": 800,
+        "minWidth": 800,
+        "height": 600,
+        "minHeight": 600,
+        "resizable": true,
+        "decorations": true,
+        "center": true,
+        "url": "index.html",
+        "label": "apploader"
+      },
+      {
+        "visible": false,
+        "fullscreen": false,
+        "title": "Graphite Desktop",
+        "width": 800,
+        "minWidth": 800,
+        "height": 600,
+        "minHeight": 600,
+        "resizable": true,
+        "decorations": true,
+        "center": true,
+        "url": "https://app.graphite.dev",
+        "label": "graphite"
+      }
+    ]
+  }
+}
