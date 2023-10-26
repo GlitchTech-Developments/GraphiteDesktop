@@ -1,7 +1,7 @@
 {
   "name": "graphite-desktop-oss",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,7 +11,8 @@
     "preview:native-unix": "./.exec/exec-bundle-unix.sh",
     "preview:native-win": "./.exec/exec-bundle-unix.sh",
     "tauri": "tauri",
-    "prettier": "prettier --write ./src/**/*.{ts,tsx,css}"
+    "prettier": "prettier --write ./src/**/*.{ts,tsx,css}",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.5.1",
@@ -31,9 +32,20 @@
     "postcss-preset-env": "^9.2.0",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
+    "semantic-release": "^22.0.5",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "^3.3.5",
     "typescript": "^5.2.2",
     "vite": "^4.5.0"
+  },
+  "release": {
+    "branches": [
+      "main",
+      "next"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GlitchTech-Developments/GraphiteDesktop.git"
   }
 }
