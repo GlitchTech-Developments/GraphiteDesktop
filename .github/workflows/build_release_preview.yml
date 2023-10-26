@@ -2,9 +2,9 @@ name: Build and Release Application
 
 on:
   push:
-    branches: [main]
+    branches: [nightly]
   pull_request_target: # needed for forked PRs
-    branches: [main]
+    branches: [nightly]
 
 jobs:
   publish-tauri:
@@ -42,5 +42,5 @@ jobs:
           tagName: GraphiteDesktop-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
           releaseName: "GraphiteDesktop v__VERSION__"
           releaseBody: "See the assets to download this version and install."
-          releaseDraft: true
-          prerelease: false
+          releaseDraft: false
+          prerelease: true
