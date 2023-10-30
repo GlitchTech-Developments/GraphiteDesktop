@@ -1,12 +1,13 @@
-import { VNode } from "preact";
-import { useEffect, useState } from "preact/hooks";
+"use client";
+
+import React, { useEffect, useState } from "react";
 
 import { checkWebsiteAvailability } from "@/utils/isEndpointUp";
 import { isNative } from "@/utils/isNativeRuntime";
 
 const debug = false;
 
-const SplashScreenProvider = ({ children }: { children: VNode<any> }) => {
+const SplashScreenProvider = ({ children }: { children: React.ReactNode }) => {
   const [splashScreenClosed, setSplashScreenClosed] = useState(false);
 
   useEffect(() => {

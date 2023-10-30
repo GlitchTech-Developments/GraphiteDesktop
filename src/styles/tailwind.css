@@ -48,6 +48,7 @@
 
   .g-bg-plus {
     @apply absolute h-full w-full bg-[url(/images/plus.svg)];
+    opacity: 0.25;
     image-rendering: pixelated;
     background-position: 50%;
     -webkit-mask-image: radial-gradient(
