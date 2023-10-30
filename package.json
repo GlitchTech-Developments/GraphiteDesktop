@@ -1,34 +1,40 @@
 {
-  "name": "graphite-desktop-oss",
+  "name": "graphite-desktop-next",
+  "version": "0.2.0",
   "private": true,
-  "version": "0.0.1",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "next dev",
     "dev:native": "tauri dev",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "preview:native-unix": "./.exec/exec-bundle-unix.sh",
-    "preview:native-win": "./.exec/exec-bundle-unix.sh",
+    "build": "next build",
+    "start": "next start",
+    "start:native-unix": "./.exec/exec-bundle-unix.sh",
+    "start:native-win": "./.exec/exec-bundle-unix.sh",
     "tauri": "tauri",
     "prettier": "prettier --write ./src/**/*.{ts,tsx,css}",
     "fix:version-mismatch": "node ./.fix-versions.cjs",
+    "lint": "next lint",
     "prepare": "husky install"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.5.1",
-    "husky": "^8.0.3",
-    "preact": "^10.18.1"
+    "next": "14.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.6.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tauri-apps/cli": "^1.5.6",
     "@trivago/prettier-plugin-sort-imports": "^4.2.1",
     "@types/node": "^20.8.9",
+    "@types/react": "^18.2.33",
+    "@types/react-dom": "^18.2.14",
+    "autoprefixer": "^10.4.16",
     "clsx": "^2.0.0",
     "cssnano": "^6.0.1",
+    "eslint": "^8.52.0",
+    "eslint-config-next": "14.0.1",
+    "husky": "^8.0.3",
     "postcss": "^8.4.31",
     "postcss-import": "^15.1.0",
     "postcss-nesting": "^12.0.1",
@@ -37,8 +43,7 @@
     "prettier-plugin-tailwindcss": "^0.5.6",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "^3.3.5",
-    "typescript": "^5.2.2",
-    "vite": "^4.5.0"
+    "typescript": "^5.2.2"
   },
   "release": {
     "branches": [

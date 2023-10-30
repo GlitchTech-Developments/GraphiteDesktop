@@ -1,6 +1,6 @@
 [package]
 name = "graphite_desktop"
-version = "0.0.1"
+version = "0.2.0"
 description = "A simple desktop app for Graphite"
 authors = ["GlitchTech Developments"]
 license = "MIT"
@@ -15,6 +15,7 @@ tauri-build = { version = "1.5", features = [] }
 [dependencies]
 tauri = { version = "1.5", features = [ "http-request", "window-create", "shell-open"] }
 serde = { version = "1.0", features = ["derive"] }
+curl = "0.4.44"
 serde_json = "1.0"
 
 [features]

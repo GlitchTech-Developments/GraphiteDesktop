@@ -2,13 +2,13 @@
   "build": {
     "beforeDevCommand": "pnpm run dev",
     "beforeBuildCommand": "pnpm run build",
-    "devPath": "http://localhost:1420",
-    "distDir": "../dist",
+    "devPath": "http://localhost:3000",
+    "distDir": "../out",
     "withGlobalTauri": false
   },
   "package": {
     "productName": "GraphiteDesktop",
-    "version": "0.0.1"
+    "version": "0.2.0"
   },
   "tauri": {
     "allowlist": {
