@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
+import SplashScreenProvider from "@/providers/SplashScreenProvider";
 import "@/styles/tailwind.css";
 
 export const metadata: Metadata = {
@@ -17,7 +19,11 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body>{children}</body>
+      <body>
+        <Suspense>
+          <SplashScreenProvider>{children}</SplashScreenProvider>
+        </Suspense>
+      </body>
     </html>
   );
 }
