@@ -1,3 +1,7 @@
+"use client";
+
+import { Suspense, useEffect, useState } from "react";
+
 import LoadingDots from "@/components/LoadingDots";
 import SplashScreenProvider from "@/providers/SplashScreenProvider";
 
@@ -19,7 +23,8 @@ const Logo = () => {
 
 const App = () => {
   return (
-    <SplashScreenProvider>
+    <Suspense>
+      {/* <SplashScreenProvider key={new Date().getMilliseconds()}> */}
       <div className="g-wrapper">
         <div className="g-content">
           <div className="g-content-wrapper">
@@ -33,7 +38,12 @@ const App = () => {
                   </span>
                   <span className="mt-2 w-full">
                     Checking status of Graphite Web
-                    <LoadingDots />
+                    <LoadingDots key={new Date().getMilliseconds()} />
+                  </span>
+                  <span className="mt-2 w-full">
+                    If you see this screen for more than 2 seconds, please
+                    right-click on the window content and press
+                    &apos;Reload&apos;
                   </span>
                 </div>
               </div>
@@ -41,7 +51,8 @@ const App = () => {
           </div>
         </div>
       </div>
-    </SplashScreenProvider>
+      {/* </SplashScreenProvider> */}
+    </Suspense>
   );
 };
 

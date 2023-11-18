@@ -2,27 +2,30 @@ import { checkWebsiteAvailability } from "./isEndpointUp";
 import { isNative } from "./isNativeRuntime";
 
 export const invokeSplashScreenCloseFunction = async () => {
-  const url = "https://app.graphite.dev";
+  try {
+    const url = "https://app.graphite.dev";
 
-  const remoteAvailableCheck = await checkWebsiteAvailability(url);
+    const remoteAvailableCheck = await checkWebsiteAvailability(url);
 
-  const invokeNativeCloseCall = async () => {
-    const { invoke } = await import("@tauri-apps/api/tauri");
-    invoke("close_splashscreen");
-  };
+    const invokeNativeCloseCall = async () => {
+      const { invoke } = await import("@tauri-apps/api/tauri");
+      invoke("close_splashscreen");
+    };
 
-  const timeout = setTimeout(() => {
     if (!remoteAvailableCheck) {
       console.log("remote not available", remoteAvailableCheck);
       return;
     }
 
-    if (isNative) {
-      invokeNativeCloseCall();
-    } else {
-      window.location.assign(url);
-    }
-
-    clearTimeout(timeout);
-  }, 2000);
+    const pushToLocation = async () => {
+      if (isNative) {
+        invokeNativeCloseCall();
+      } else {
+        window.location.assign(url);
+      }
+    };
+    setTimeout(pushToLocation, 1800);
+  } catch (error: any) {
+    throw new Error(error.message);
+  }
 };

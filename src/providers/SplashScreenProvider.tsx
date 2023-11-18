@@ -6,10 +6,10 @@ import { invokeSplashScreenCloseFunction } from "@/utils/spashHandler";
 
 const SplashScreenProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
-    invokeSplashScreenCloseFunction();
+    void invokeSplashScreenCloseFunction();
   }, []);
 
-  return <>{children}</>;
+  return <div>{children}</div>;
 };
 
 export default SplashScreenProvider;
