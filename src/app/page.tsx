@@ -1,7 +1,4 @@
-"use client";
-
-import { useState } from "react";
-
+import LoadingDots from "@/components/LoadingDots";
 import SplashScreenProvider from "@/providers/SplashScreenProvider";
 
 const Logo = () => {
@@ -21,29 +18,6 @@ const Logo = () => {
 };
 
 const App = () => {
-  const [loadingStep, setLoadingStep] = useState(1);
-
-  const LoadingDots = () => {
-    const dots = Array(loadingStep)
-      .fill(0)
-      .map((_, i) => (
-        <span key={i} className="animate-pulse">
-          .
-        </span>
-      ));
-    if (loadingStep < 3) {
-      setTimeout(() => {
-        setLoadingStep((prev: number) => prev + 1);
-      }, 750);
-    } else {
-      setTimeout(() => {
-        setLoadingStep(1);
-      }, 750);
-    }
-
-    return <span className="text-[#8e8e8e]">{dots}</span>;
-  };
-
   return (
     <SplashScreenProvider>
       <div className="g-wrapper">
@@ -59,7 +33,7 @@ const App = () => {
                   </span>
                   <span className="mt-2 w-full">
                     Checking status of Graphite Web
-                    {loadingStep && <LoadingDots />}
+                    <LoadingDots />
                   </span>
                 </div>
               </div>

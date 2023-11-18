@@ -6,7 +6,7 @@
     "dev": "next dev",
     "dev:native": "tauri dev",
     "build": "next build",
-    "start": "next start",
+    "start": "npx serve@latest out",
     "start:native-unix": "./.exec/exec-bundle-unix.sh",
     "start:native-win": "./.exec/exec-bundle-unix.sh",
     "tauri": "tauri",

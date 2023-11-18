@@ -1,36 +1,19 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import { checkWebsiteAvailability } from "@/utils/isEndpointUp";
 import { isNative } from "@/utils/isNativeRuntime";
 
-const debug = false;
-
 const SplashScreenProvider = ({ children }: { children: React.ReactNode }) => {
-  const [splashScreenClosed, setSplashScreenClosed] = useState(false);
-
   useEffect(() => {
-    invokeSplashScreenCloseFunction({
-      splashScreenClosed,
-      setSplashScreenClosed,
-    });
-  }, [splashScreenClosed]);
+    invokeSplashScreenCloseFunction();
+  }, []);
 
   return children;
 };
 
-interface InvokeSplashScreenCloseFunctionProps {
-  splashScreenClosed: boolean;
-  setSplashScreenClosed: (value: boolean) => void;
-}
-
-const invokeSplashScreenCloseFunction = async ({
-  splashScreenClosed,
-  setSplashScreenClosed,
-}: InvokeSplashScreenCloseFunctionProps) => {
-  if (splashScreenClosed || debug) return;
-
+const invokeSplashScreenCloseFunction = async () => {
   const url = "https://app.graphite.dev";
 
   const remoteAvailableCheck = await checkWebsiteAvailability(url);
@@ -41,11 +24,6 @@ const invokeSplashScreenCloseFunction = async ({
   };
 
   const timeout = setTimeout(() => {
-    if (splashScreenClosed) {
-      clearTimeout(timeout);
-      return;
-    }
-
     if (!remoteAvailableCheck) {
       console.log("remote not available", remoteAvailableCheck);
       return;
@@ -57,7 +35,6 @@ const invokeSplashScreenCloseFunction = async ({
       window.location.assign(url);
     }
 
-    setSplashScreenClosed(true);
     clearTimeout(timeout);
   }, 2000);
 };
