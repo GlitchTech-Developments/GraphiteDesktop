@@ -1,8 +1,6 @@
 "use client";
 
-import { useState } from "react";
-
-import SplashScreenProvider from "@/providers/SplashScreenProvider";
+import { useEffect, useState } from "react";
 
 const Logo = () => {
   return (
@@ -24,50 +22,47 @@ const App = () => {
   const [loadingStep, setLoadingStep] = useState(1);
 
   const LoadingDots = () => {
-    const dots = Array(loadingStep)
-      .fill(0)
-      .map((_, i) => (
-        <span key={i} className="animate-pulse">
-          .
-        </span>
-      ));
-    if (loadingStep < 3) {
-      setTimeout(() => {
-        setLoadingStep((prev: number) => prev + 1);
-      }, 750);
-    } else {
-      setTimeout(() => {
-        setLoadingStep(1);
-      }, 750);
-    }
+    const dots = Array(loadingStep).fill(".").join("");
 
-    return <span className="text-[#8e8e8e]">{dots}</span>;
+    useEffect(() => {
+      const timeout = setTimeout(() => {
+        setLoadingStep((prev) => {
+          if (prev === 3) {
+            return 1;
+          }
+
+          return prev + 1;
+        });
+      }, 1000);
+
+      return () => clearTimeout(timeout);
+    }, []);
+
+    return <span className="animate-pulse text-[#8e8e8e]">{dots}</span>;
   };
 
   return (
-    <SplashScreenProvider>
-      <div className="g-wrapper">
-        <div className="g-content">
-          <div className="g-content-wrapper">
-            <div className="g-bg-plus"></div>
-            <div className="flex flex-1 items-center justify-center">
-              <div className="g-card min-w-[350px]">
-                <Logo />
-                <div className="flex w-full flex-col px-[var(--space-xxl)] text-center">
-                  <span className="w-full text-[24px] font-medium">
-                    Welcome to Graphite
-                  </span>
-                  <span className="mt-2 w-full">
-                    Checking status of Graphite Web
-                    {loadingStep && <LoadingDots />}
-                  </span>
-                </div>
+    <div className="g-wrapper">
+      <div className="g-content">
+        <div className="g-content-wrapper">
+          <div className="g-bg-plus"></div>
+          <div className="flex flex-1 items-center justify-center">
+            <div className="g-card min-w-[350px]">
+              <Logo />
+              <div className="flex w-full flex-col px-[var(--space-xxl)] text-center">
+                <span className="w-full text-[24px] font-medium">
+                  Welcome to Graphite
+                </span>
+                <span className="mt-2 w-full">
+                  Checking status of Graphite Web
+                  {loadingStep && <LoadingDots />}
+                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </SplashScreenProvider>
+    </div>
   );
 };
 

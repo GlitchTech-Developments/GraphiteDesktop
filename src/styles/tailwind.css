@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#1e1e20] p-0 text-[--text-color-default];
+    @apply cursor-default select-none bg-[#1e1e20] p-0 text-[--text-color-default];
   }
 
   main {
