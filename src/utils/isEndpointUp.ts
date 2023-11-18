@@ -12,7 +12,12 @@ export const checkWebsiteAvailability = async (url: string) => {
 
     return (await getRemoteAvailableCheck()) == "online";
   } else {
-    const isAvailable = await fetch(url, { mode: "no-cors" })
+    const isAvailable = await fetch(url, {
+      mode: "no-cors",
+      next: {
+        revalidate: 0,
+      },
+    })
       .then(() => {
         return true;
       })

@@ -1,6 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
+
+import LoadingDots from "@/components/LoadingDots";
+import SplashScreenProvider from "@/providers/SplashScreenProvider";
 
 const Logo = () => {
   return (
@@ -19,50 +22,37 @@ const Logo = () => {
 };
 
 const App = () => {
-  const [loadingStep, setLoadingStep] = useState(1);
-
-  const LoadingDots = () => {
-    const dots = Array(loadingStep).fill(".").join("");
-
-    useEffect(() => {
-      const timeout = setTimeout(() => {
-        setLoadingStep((prev) => {
-          if (prev === 3) {
-            return 1;
-          }
-
-          return prev + 1;
-        });
-      }, 1000);
-
-      return () => clearTimeout(timeout);
-    }, []);
-
-    return <span className="animate-pulse text-[#8e8e8e]">{dots}</span>;
-  };
-
   return (
-    <div className="g-wrapper">
-      <div className="g-content">
-        <div className="g-content-wrapper">
-          <div className="g-bg-plus"></div>
-          <div className="flex flex-1 items-center justify-center">
-            <div className="g-card min-w-[350px]">
-              <Logo />
-              <div className="flex w-full flex-col px-[var(--space-xxl)] text-center">
-                <span className="w-full text-[24px] font-medium">
-                  Welcome to Graphite
-                </span>
-                <span className="mt-2 w-full">
-                  Checking status of Graphite Web
-                  {loadingStep && <LoadingDots />}
-                </span>
+    <Suspense>
+      {/* <SplashScreenProvider key={new Date().getMilliseconds()}> */}
+      <div className="g-wrapper">
+        <div className="g-content">
+          <div className="g-content-wrapper">
+            <div className="g-bg-plus"></div>
+            <div className="flex flex-1 items-center justify-center">
+              <div className="g-card min-w-[350px]">
+                <Logo />
+                <div className="flex w-full flex-col px-[var(--space-xxl)] text-center">
+                  <span className="w-full text-[24px] font-medium">
+                    Welcome to Graphite
+                  </span>
+                  <span className="mt-2 w-full">
+                    Checking status of Graphite Web
+                    <LoadingDots key={new Date().getMilliseconds()} />
+                  </span>
+                  <span className="mt-2 w-full">
+                    If you see this screen for more than 2 seconds, please
+                    right-click on the window content and press
+                    &apos;Reload&apos;
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      {/* </SplashScreenProvider> */}
+    </Suspense>
   );
 };
 
