@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Welcome to GraphiteDesktop 👋</h1>
+<p>
+  <img alt="GitHub package.json version (branch)" src="https://img.shields.io/github/package-json/v/GlitchTech-Developments/GraphiteDesktop/main?label=version%20%7C%20main&color=%2334a123">
+  <a href="https://github.com/GlitchTech-Developments/GraphiteDesktop/blob/main/LICENCE" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+  <a href="https://twitter.com/GlitchTechEU" target="_blank">
+    <img alt="Twitter: GlitchTechEU" src="https://img.shields.io/twitter/follow/GlitchTechEU.svg?style=social" />
+  </a>
+</p>
 
-## Getting Started
+> Open-Source Desktop application for Graphite. (Practically wraps the web-app for now)
 
-First, run the development server:
+## Install
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```sh
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+pnpm run dev:native
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Run executable locally
 
-## Learn More
+> After these commands you'll find the installer in `/src-tauri/target/release/bundle` depending on your platform. Automated releases towards github will be coming in the near future as well though.
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+pnpm tauri build && pnpm run preview:native-[win/linux]
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## What to expect?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+When opening the app, you'll first be welcomed with the following screen where the app checks if Graphite is up and reachable:
+![image](https://github.com/GlitchTech-Developments/GraphiteDesktop/assets/60965908/4bd9943a-5fb9-4ee8-9a05-bf1679c2e070)
 
-## Deploy on Vercel
+On windows you'll get (after logging in) the following screen (could change upstream at some point):
+![image](https://github.com/GlitchTech-Developments/GraphiteDesktop/assets/60965908/60d266c0-9af4-4500-bea3-52f2bb564d1b)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+👤 **GlitchTech Developments**
+
+- Website: https://glitchtech.eu
+- Twitter: [@GlitchTechEU](https://twitter.com/GlitchTechEU)
+- Github: [@GlitchTech-Developments](https://github.com/GlitchTech-Developments)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/GlitchTech-Developments/GraphiteDesktop/issues).
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+## 📝 License
+
+Copyright © 2023 [GlitchTech Developments](https://github.com/GlitchTech-Developments).<br />
+This project is [MIT](https://github.com/GlitchTech-Developments/GraphiteDesktop/blob/main/LICENCE) licensed.
