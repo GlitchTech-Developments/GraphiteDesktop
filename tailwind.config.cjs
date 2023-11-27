@@ -1,14 +1,19 @@
 import plugin from "tailwindcss/plugin";
 
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./src/**/*.{tsx,ts}", "./**/*.html"],
+/** @type {import("tailwindcss").Config} */
+const config = {
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       textShadow: {
         sm: "0 1px 2px var(--tw-shadow-color)",
         DEFAULT: "0 2px 4px var(--tw-shadow-color)",
         lg: "0 8px 16px var(--tw-shadow-color)",
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
   },
@@ -18,7 +23,7 @@ export default {
   plugins: [
     require.resolve("@tailwindcss/aspect-ratio"),
     require.resolve("@tailwindcss/container-queries"),
-    plugin(({ matchUtilities, addUtilities, theme }) => {
+    plugin(({ matchUtilities, theme }) => {
       matchUtilities(
         {
           "text-shadow": (value) => ({
@@ -30,3 +35,4 @@ export default {
     }),
   ],
 };
+export default config;

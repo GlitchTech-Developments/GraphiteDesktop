@@ -1,6 +1,6 @@
 {
   "name": "graphite-desktop",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,7 +8,9 @@
     "build": "next build",
     "start": "npx serve@latest out",
     "start:native-unix": "./.exec/exec-bundle-unix.sh",
+    "start:native-unix-debug": "./.exec/exec-debug-bundle-unix.sh",
     "start:native-win": "./.exec/exec-bundle-unix.sh",
+    "start:native-win-debug": "./.exec/exec-debug-bundle-unix.sh",
     "tauri": "tauri",
     "prettier": "prettier --write ./src/**/*.{ts,tsx,css}",
     "fix:version-mismatch": "node ./.fix-versions.cjs",

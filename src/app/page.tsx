@@ -24,34 +24,34 @@ const Logo = () => {
 const App = () => {
   return (
     <Suspense>
-      {/* <SplashScreenProvider key={new Date().getMilliseconds()}> */}
-      <div className="g-wrapper">
-        <div className="g-content">
-          <div className="g-content-wrapper">
-            <div className="g-bg-plus"></div>
-            <div className="flex flex-1 items-center justify-center">
-              <div className="g-card min-w-[350px]">
-                <Logo />
-                <div className="flex w-full flex-col px-[var(--space-xxl)] text-center">
-                  <span className="w-full text-[24px] font-medium">
-                    Welcome to Graphite
-                  </span>
-                  <span className="mt-2 w-full">
-                    Checking status of Graphite Web
-                    <LoadingDots key={new Date().getMilliseconds()} />
-                  </span>
-                  <span className="mt-2 w-full">
-                    If you see this screen for more than 2 seconds, please
-                    right-click on the window content and press
-                    &apos;Reload&apos;
-                  </span>
+      <SplashScreenProvider key={new Date().getMilliseconds()}>
+        <div className="g-wrapper">
+          <div className="g-content">
+            <div className="g-content-wrapper">
+              <div className="g-bg-plus"></div>
+              <div className="flex flex-1 items-center justify-center">
+                <div className="g-card min-w-[350px]">
+                  <Logo />
+                  <div className="flex w-full flex-col px-[var(--space-xxl)] text-center">
+                    <span className="w-full text-[24px] font-medium">
+                      Welcome to Graphite
+                    </span>
+                    <span className="mt-2 w-full">
+                      Checking status of Graphite Web
+                      <LoadingDots key={new Date().getMilliseconds()} />
+                    </span>
+                    <span className="mt-2 w-full">
+                      If you see this screen for more than 2 seconds, please
+                      right-click on the window content and press
+                      &apos;Reload&apos;
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* </SplashScreenProvider> */}
+      </SplashScreenProvider>
     </Suspense>
   );
 };
