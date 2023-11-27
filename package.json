@@ -58,6 +58,6 @@
     "url": "https://github.com/GlitchTech-Developments/GraphiteDesktop.git"
   },
   "volta": {
-    "node": "20.9.0"
+    "node": "20.10.0"
   }
 }
