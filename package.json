@@ -1,6 +1,6 @@
 {
   "name": "graphite-desktop",
-  "version": "0.4.1",
+  "version": "0.5.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,7 +8,9 @@
     "build": "next build",
     "start": "npx serve@latest out",
     "start:native-unix": "./.exec/exec-bundle-unix.sh",
+    "start:native-unix-debug": "./.exec/exec-debug-bundle-unix.sh",
     "start:native-win": "./.exec/exec-bundle-unix.sh",
+    "start:native-win-debug": "./.exec/exec-debug-bundle-unix.sh",
     "tauri": "tauri",
     "prettier": "prettier --write ./src/**/*.{ts,tsx,css}",
     "fix:version-mismatch": "node ./.fix-versions.cjs",
@@ -26,9 +28,9 @@
     "@tailwindcss/container-queries": "^0.1.1",
     "@tauri-apps/cli": "^1.5.6",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "@types/node": "^20.9.2",
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.39",
+    "@types/react-dom": "^18.2.17",
     "autoprefixer": "^10.4.16",
     "clsx": "^2.0.0",
     "cssnano": "^6.0.1",
@@ -43,7 +45,7 @@
     "prettier-plugin-tailwindcss": "^0.5.7",
     "tailwind-merge": "^2.0.0",
     "tailwindcss": "^3.3.5",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.2"
   },
   "release": {
     "branches": [
@@ -56,6 +58,6 @@
     "url": "https://github.com/GlitchTech-Developments/GraphiteDesktop.git"
   },
   "volta": {
-    "node": "20.9.0"
+    "node": "20.10.0"
   }
 }

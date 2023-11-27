@@ -11,6 +11,23 @@
 
 > Open-Source Desktop application for Graphite. (Practically wraps the web-app for now)
 
+## How to install GraphiteDesktop?
+
+### Windows
+
+Grab the latest release from [here](https://github.com/GlitchTech-Developments/GraphiteDesktop/releases/latest) and run the MSI or EXE installer.
+
+### Linux
+
+For now we only support deb packaging which can be found [here](https://github.com/GlitchTech-Developments/GraphiteDesktop/releases/latest) as well. If you run Arch or any other distro, you can build the app yourself by using the following commands.
+
+Arch
+
+```sh
+pnpm tauri build
+sudo cp src-tauri/target/release/graphite-desktop /usr/bin/graphite-desktop
+```
+
 ## Install
 
 ```sh

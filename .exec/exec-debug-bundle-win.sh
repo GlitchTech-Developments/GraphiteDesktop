@@ -1,0 +1,1 @@
+./src-tauri/target/debug/graphite-desktop.exe
