@@ -40,11 +40,6 @@ const App = () => {
                       Checking status of Graphite Web
                       <LoadingDots key={new Date().getMilliseconds()} />
                     </span>
-                    <span className="mt-2 w-full">
-                      If you see this screen for more than 2 seconds, please
-                      right-click on the window content and press
-                      &apos;Reload&apos;
-                    </span>
                   </div>
                 </div>
               </div>
