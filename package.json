@@ -1,7 +1,8 @@
 {
   "name": "graphite-desktop",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "dev:native": "tauri dev",
@@ -19,6 +20,7 @@
   },
   "dependencies": {
     "@tauri-apps/api": "^1.5.1",
+    "million": "^2.6.4",
     "next": "14.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
