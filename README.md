@@ -1,6 +1,7 @@
 <h1 align="center">Welcome to GraphiteDesktop 👋</h1>
 <p>
-  <img alt="GitHub package.json version (branch)" src="https://img.shields.io/github/package-json/v/GlitchTech-Developments/GraphiteDesktop/main?label=version%20%7C%20main&color=%2334a123">
+  <img alt="GitHub package.json version (stable-branch)" src="https://img.shields.io/github/package-json/v/GlitchTech-Developments/GraphiteDesktop/main?label=version-stable%20%7C%20main&color=%2334a123">
+  <img alt="GitHub package.json version (stable-branch)" src="https://img.shields.io/github/package-json/v/GlitchTech-Developments/GraphiteDesktop/nightly?label=version-nightly%20%7C%20main&color=%2334a123">
   <a href="https://github.com/GlitchTech-Developments/GraphiteDesktop/blob/main/LICENCE" target="_blank" style="text-decoration:none;">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
