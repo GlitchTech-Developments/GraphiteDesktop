@@ -1,9 +1,10 @@
 "use client";
 
+import { block } from "million/react-server";
 import { useEffect, useState } from "react";
 
 const LoadingDots = () => {
-  const [loadingStep, setLoadingStep] = useState<number>(1);
+  const [loadingStep, setLoadingStep] = useState<number>(0);
 
   useEffect(() => {
     if (loadingStep < 3) {
@@ -13,31 +14,32 @@ const LoadingDots = () => {
         return current;
       };
 
-      setInterval(increment, 750);
+      setInterval(increment, 650);
     } else {
       const increment = () => {
         setLoadingStep(1);
       };
 
-      setTimeout(increment, 750);
+      setTimeout(increment, 650);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loadingStep]);
 
+  const emptyArrayofLength = (length: number) => {
+    const arr = [];
+    for (let i = 0; i < length; i++) {
+      arr.push(i);
+    }
+    return arr;
+  };
+
   return (
-    <span className="text-[#8e8e8e]">
-      {Array(loadingStep)
-        .fill(".")
-        .map((_, i) => (
-          <span
-            key={i + new Date().getMilliseconds()}
-            className="animate-pulse"
-          >
-            {_}
-          </span>
-        ))}
+    <span className="animate-pulse text-[#8e8e8e]">
+      {emptyArrayofLength(loadingStep).map((_, i) => (
+        <span key={i + new Date().getMilliseconds()}>.</span>
+      ))}
     </span>
   );
 };
 
-export default LoadingDots;
+export default block(LoadingDots);

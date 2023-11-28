@@ -1,7 +1,7 @@
 [package]
 name = "graphite_desktop"
-version = "0.5.1"
-description = "A simple desktop app for Graphite"
+version = "0.5.3"
+description = "Graphite Desktop"
 authors = ["GlitchTech Developments"]
 license = "MIT"
 repository = "https://github.com/GlitchTech-Developments/GraphiteDesktop"
@@ -13,10 +13,10 @@ edition = "2021"
 tauri-build = { version = "1.5", features = [] }
 
 [dependencies]
-tauri = { version = "1.5", features = [ "http-request", "window-create", "shell-open"] }
-serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.5.2", features = [ "http-request", "window-create", "shell-open"] }
+serde = { version = "1.0.193", features = ["derive"] }
 curl = "0.4.44"
-serde_json = "1.0"
+serde_json = "1.0.108"
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem
