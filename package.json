@@ -24,7 +24,8 @@
     "next": "14.0.3",
     "react": "^18.2.0",
     "react-animated-cursor": "^2.11.2",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sharp": "^0.33.0"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
