@@ -23,6 +23,7 @@
     "million": "^2.6.4",
     "next": "14.0.3",
     "react": "^18.2.0",
+    "react-animated-cursor": "^2.11.2",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {

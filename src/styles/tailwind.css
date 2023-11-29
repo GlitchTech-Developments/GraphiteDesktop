@@ -46,23 +46,6 @@
     overflow: hidden;
   }
 
-  .g-bg-plus {
-    @apply absolute h-full w-full bg-[url(/images/plus.svg)];
-    opacity: 0.25;
-    image-rendering: pixelated;
-    background-position: 50%;
-    -webkit-mask-image: radial-gradient(
-      circle 240px at var(--mouse-x-pos) var(--mouse-y-pos),
-      rgba(1, 1, 1, 0.36),
-      rgba(1, 1, 1, 0.16)
-    );
-    mask-image: radial-gradient(
-      circle 240px at var(--mouse-x-pos) var(--mouse-y-pos),
-      rgba(1, 1, 1, 0.36),
-      rgba(1, 1, 1, 0.16)
-    );
-  }
-
   .animate-spin-slow {
     animation: spin 2s linear infinite;
   }
