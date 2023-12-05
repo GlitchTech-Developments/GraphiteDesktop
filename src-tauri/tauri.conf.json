@@ -43,14 +43,12 @@
           "type": "downloadBootstrapper"
         },
         "nsis": {
-          "license": "./LICENSE",
           "compression": "lzma"
         }
       },
       "macOS": {
         "minimumSystemVersion": "10.13",
-        "exceptionDomain": "app.graphite.dev",
-        "license": "./LICENSE"
+        "exceptionDomain": "app.graphite.dev"
       }
     },
     "security": {
