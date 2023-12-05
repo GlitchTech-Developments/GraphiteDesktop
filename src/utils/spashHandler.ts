@@ -24,7 +24,7 @@ export const invokeSplashScreenCloseFunction = async () => {
         window.location.assign(url);
       }
     };
-    setTimeout(pushToLocation, 1800);
+    setTimeout(pushToLocation, 2200);
   } catch (error: any) {
     console.error(error);
     throw new Error(error.message);

@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "GraphiteDesktop",
-    "version": "0.5.3"
+    "version": "0.5.4"
   },
   "tauri": {
     "allowlist": {
@@ -29,16 +29,31 @@
       "active": true,
       "targets": ["deb", "nsis", "msi", "app", "dmg", "updater"],
       "identifier": "com.glitchtech.graphitedesktop",
+      "publisher": "GlitchTech Developments",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
         "icons/128x128@2x.png",
         "icons/icon.icns",
         "icons/icon.ico"
-      ]
+      ],
+      "windows": {
+        "webviewInstallMode": {
+          "silent": true,
+          "type": "downloadBootstrapper"
+        },
+        "nsis": {
+          "compression": "lzma"
+        }
+      },
+      "macOS": {
+        "minimumSystemVersion": "10.13",
+        "exceptionDomain": "app.graphite.dev"
+      }
     },
     "security": {
-      "csp": "default-src * 'self' data: tauri://* https://app.graphite.dev"
+      "csp": "default-src * 'self' data: 'unsafe-inline' 'unsafe-hashes' 'unsafe-eval' tauri://* http://localhost:3000 https://app.graphite.dev",
+      "devCsp": "default-src * 'self' data: 'unsafe-inline' 'unsafe-hashes' 'unsafe-eval' tauri://* http://localhost:3000 https://app.graphite.dev"
     },
     "windows": [
       {
