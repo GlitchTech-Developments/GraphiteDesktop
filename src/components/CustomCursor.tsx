@@ -4,7 +4,7 @@ import AnimatedCursor from "react-animated-cursor";
 
 const CustomCursor = () => {
   return (
-    <div className="z-[2]">
+    <div className="absolute z-[2]">
       <AnimatedCursor
         innerSize={0}
         innerScale={1}

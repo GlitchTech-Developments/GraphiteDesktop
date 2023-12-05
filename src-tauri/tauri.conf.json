@@ -52,8 +52,8 @@
       }
     },
     "security": {
-      "csp": "default-src * 'self' data: tauri://* https://app.graphite.dev",
-      "devCsp": "default-src * 'self' data: tauri://* http://localhost:3000 https://app.graphite.dev"
+      "csp": "default-src * 'self' data: 'unsafe-inline' 'unsafe-hashes' 'unsafe-eval' tauri://* http://localhost:3000 https://app.graphite.dev",
+      "devCsp": "default-src * 'self' data: 'unsafe-inline' 'unsafe-hashes' 'unsafe-eval' tauri://* http://localhost:3000 https://app.graphite.dev"
     },
     "windows": [
       {

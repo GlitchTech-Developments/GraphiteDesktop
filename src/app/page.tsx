@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import AnimatedCursor from "react-animated-cursor";
 
 import CustomCursor from "@/components/CustomCursor";
 import LoadingDots from "@/components/LoadingDots";
