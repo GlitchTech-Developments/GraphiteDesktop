@@ -29,6 +29,10 @@ pnpm tauri build
 sudo cp src-tauri/target/release/graphite-desktop /usr/bin/graphite-desktop
 ```
 
+### MacOS
+
+This method as of right now is untested, but there is a `.dmg` file accompanied with every release. So feel free to test it out!
+
 ## Install
 
 ```sh
